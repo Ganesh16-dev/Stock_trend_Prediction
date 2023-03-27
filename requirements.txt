@@ -18,3 +18,4 @@ frozendict>=2.3.4
 beautifulsoup4>=4.11.1
 html5lib>=1.1
 cryptography>=3.3.
+yfinance>=0.2.14
