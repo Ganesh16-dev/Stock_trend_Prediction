@@ -2,7 +2,10 @@ from json import load
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import pandas_datareader as data
+import locale
+from pandas_datareader import data as wb
+import yfinance as yf
+yf.pdr_override()
 from keras.models import load_model
 from datetime import datetime
 import streamlit as st
@@ -12,7 +15,7 @@ start='2009-01-01'
 end = datetime.now()
 st.title('Stock Trend Prediction')
 user_in=st.text_input('Enter Stock Ticker','AAPL')
-df=data.DataReader(user_in,'yahoo',start,end)
+df = wb.get_data_yahoo(user_in,start=start_date, end=end_date)
 st.subheader('Date from 2009-01-01 to yesterday')
 st.write(df.describe())
 
