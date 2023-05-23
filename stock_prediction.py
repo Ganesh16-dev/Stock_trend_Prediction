@@ -52,7 +52,7 @@ data_training_arr=scaler.fit_transform(data_training)
 
 model=load_model('stock.h5')
 past_100_days=data_training.tail(100)
-final_df=past_100_days.append(data_testing,ignore_index=True)
+final_df=past_100_days.concat(data_testing,ignore_index=True)
 input_data=scaler.fit_transform(final_df)
 x_test=[]
 y_test=[]
