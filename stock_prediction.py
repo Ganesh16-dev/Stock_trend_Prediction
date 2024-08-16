@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import locale
 from pandas_datareader import data as wb
 import yfinance as yf
-yf.pdr_override()
+# yf.pdr_override()
 from keras.models import load_model
 from datetime import datetime
 import streamlit as st
