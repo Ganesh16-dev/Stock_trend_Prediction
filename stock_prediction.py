@@ -15,7 +15,7 @@ start_date='2009-01-01'
 end_date = datetime.now()
 st.title('Stock Trend Prediction')
 user_in=st.text_input('Enter Stock Ticker','AAPL')
-df = wb.get_data_yahoo(user_in,start=start_date, end=end_date)
+df = yf.download(user_in,start=start_date, end=end_date)
 st.subheader('Date from 2009-01-01 to yesterday')
 st.write(df.describe())
 
